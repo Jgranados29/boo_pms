@@ -1,0 +1,7 @@
+<h1><%= @task.title %></h1>
+<p>Estado: <%= @task.status %></p>
+<% if @task.in_progress? %>
+  <p>Fecha de inicio: <%= @task.started_at %></p>
+<% elsif @task.completed? %>
+  <p>Fecha de finalización: <%= @task.completed_at %></p>
+<% end %>

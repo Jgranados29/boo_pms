@@ -1,0 +1,12 @@
+<h1>Equipos</h1>
+<ul>
+  <% @teams.each do |team| %>
+    <li>
+      <%= link_to team.name, team %>
+      | <%= link_to 'Editar', edit_team_path(team) %>
+      | <%= link_to 'Eliminar', team, method: :delete, data: { confirm: '¿Estás seguro?' } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Nuevo Equipo', new_team_path %>

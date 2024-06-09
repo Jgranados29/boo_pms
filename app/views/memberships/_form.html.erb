@@ -1,0 +1,4 @@
+<%= form_with(model: [team, membership], url: team_memberships_path(team)) do |form| %>
+  <%= form.collection_select :user_id, User.all, :id, :name %>
+  <%= form.submit "Asignar Usuario" %>
+<% end %>

@@ -1,0 +1,10 @@
+<h1><%= @team.name %></h1>
+
+<h2>Miembros:</h2>
+<ul>
+  <% @team.users.each do |user| %>
+    <li><%= user.name %></li>
+  <% end %>
+</ul>
+
+<%= render 'memberships/form', team: @team, membership: @membership %>

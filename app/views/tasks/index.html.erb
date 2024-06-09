@@ -1,0 +1,13 @@
+<h1>Tareas</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= task.title %> - Estado: <%= task.status %>
+      <% if task.pending? %>
+        <%= link_to "Iniciar", start_task_task_path(task), method: :put, data: {confirm: 'Are you sure to start this task?'} %>
+      <% elsif task.in_progress? %>
+        <%= link_to "Completar", complete_task_task_path(task), method: :put %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
